@@ -6,17 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.temilol.shoestore.R
-import com.temilol.shoestore.databinding.FragmentLoginBinding
+import com.temilol.shoestore.databinding.FragmentWelcomeBinding
 
-class LoginFragment : Fragment(R.layout.fragment_login) {
-    private lateinit var binding: FragmentLoginBinding
+class WelcomeFragment : Fragment(R.layout.fragment_welcome) {
+    private lateinit var binding: FragmentWelcomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
+    ): View? {
+        binding = FragmentWelcomeBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 }

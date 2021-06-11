@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/newShoeFragment">
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.temilol.shoestore.fragment.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.temilol.shoestore.fragment.WelcomeFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.temilol.shoestore.fragment.ShoeListFragment"
+        android:label="Show List"
+        tools:layout="@layout/fragment_shoe_list">
+        <action
+            android:id="@+id/action_shoeListFragment_to_newShoeFragment"
+            app:destination="@id/newShoeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newShoeFragment"
+        android:name="com.temilol.shoestore.fragment.NewShoeFragment"
+        android:label="Add New Shoe"
+        tools:layout="@layout/fragment_new_shoe" />
 </navigation>
