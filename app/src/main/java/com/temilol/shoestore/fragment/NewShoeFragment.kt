@@ -31,24 +31,35 @@ class NewShoeFragment : Fragment(R.layout.fragment_new_shoe) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             saveButton.setOnClickListener {
-                val newShoe = Shoe(
-                    name = shoeNameEdittext.text.toString(),
-                    size = sizeEdittext.text.toString().toDouble(),
-                    company = companyEdittext.text.toString(),
-                    description = descriptionEdittext.text.toString()
-                )
-                shoeViewModel.addShoe(newShoe)
-                navigate()
-                Toast.makeText(
-                    context,
-                    "${shoeNameEdittext.text} is added to your collection",
-                    Toast.LENGTH_SHORT
-                ).show()
+                val newShoe = when (sizeEdittext.text.toString().isEmpty()) {
+                    true -> null
+                    else -> Shoe(
+                        name = shoeNameEdittext.text.toString(),
+                        size = sizeEdittext.text.toString().toDouble(),
+                        company = companyEdittext.text.toString(),
+                        description = descriptionEdittext.text.toString()
+                    )
+                }
+                if (newShoe != null) {
+                    shoeViewModel.addShoe(newShoe)
+                    navigate()
+                    Toast.makeText(
+                        context,
+                        "${shoeNameEdittext.text} is added to your collection",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    Toast.makeText(
+                        context,
+                        "Please enter a valid size",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
             cancelButton.setOnClickListener {
                 val builder = AlertDialog.Builder(context)
                 builder.setTitle("Cancel")
-                    .setMessage("Are you sure?")
+                    .setMessage("Are you sure you want to cancel?")
                     .setPositiveButton("Yes") { _, _ ->
                         navigate()
                     }
