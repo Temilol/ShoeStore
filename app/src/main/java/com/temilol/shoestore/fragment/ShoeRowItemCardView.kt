@@ -25,6 +25,6 @@ class ShoeRowItemCardView(context: Context) : MaterialCardView(context) {
         shoeNameItem.text = shoe.name
         shoeDescriptionItem.text = shoe.description
         shoeCompanyItem.text = shoe.company
-        shoeSizeItem.text = shoe.size.toString()
+        shoeSizeItem.text = "Size ${shoe.size}"
     }
 }

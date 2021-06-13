@@ -2,4 +2,16 @@
     <string name="app_name">Shoezy</string>
     <string name="app_logo_description">App Logo</string>
     <string name="add_new_shoe">add_new_shoe</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="instructions">Enter your shoe name, shoe size, shoe company and a custom description to add new shoes to your collection</string>
+    <string name="view_collection_button">View Collection</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="continue_button">Continue</string>
+    <string name="app_slogan">Where magic meet the feet</string>
+    <string name="app_welcome">Welcome to Shoezy</string>
+    <string name="instruction_title">What to do</string>
 </resources>

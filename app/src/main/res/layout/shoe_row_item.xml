@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:textColor="@color/black"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/shoe_size_item"
                 app:layout_constraintStart_toEndOf="@+id/shoe_name_item"
                 tools:text="(Nike)" />
@@ -56,7 +56,7 @@
                 android:layout_marginStart="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/shoe_name_item"
-                tools:text="qazakhskhkwihwqjbwkhiqw" />
+                tools:text="Made with magic" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
