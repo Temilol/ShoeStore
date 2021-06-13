@@ -2,6 +2,9 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Constraint Layout was used here to organize the fields relative to each other,
+     while also creating a flat view hierarchy as opposed to a nested view group -->
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/login_layout"
