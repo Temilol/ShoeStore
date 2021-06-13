@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Add New Shoe"
+            android:text="@string/add_new_shoe"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
             android:labelFor="@+id/shoe_name_edittext"
-            android:text="Shoe Name"
+            android:text="@string/shoe_name_text"
             app:layout_constraintBottom_toTopOf="@+id/shoe_name_edittext"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/new_shoe_text" />
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:labelFor="@+id/company_edittext"
-            android:text="Company"
+            android:text="@string/company_text"
             app:layout_constraintBottom_toTopOf="@+id/company_edittext"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_edittext" />
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:labelFor="@+id/size_edittext"
-            android:text="Shoe Size"
+            android:text="@string/shoe_size_text"
             app:layout_constraintBottom_toTopOf="@+id/size_edittext"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/company_edittext" />
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:labelFor="@+id/description_edittext"
-            android:text="Description"
+            android:text="@string/description_text"
             app:layout_constraintBottom_toTopOf="@+id/description_edittext"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/size_edittext" />
