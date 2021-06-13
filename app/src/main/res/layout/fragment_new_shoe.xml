@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="shoeViewModel"
+            type="com.temilol.shoestore.viewmodel.ShoeViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -50,6 +55,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:inputType="text"
+            android:text="@={shoeViewModel.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_textview" />
@@ -72,6 +78,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:inputType="text"
+            android:text="@={shoeViewModel.company}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/company_textview" />
@@ -94,6 +101,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:inputType="number"
+            android:text="@={shoeViewModel.size}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/size_textview" />
@@ -116,6 +124,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:inputType="text"
+            android:text="@={shoeViewModel.description}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/description_textview" />
@@ -128,6 +137,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
             android:backgroundTint="@color/colorPrimary"
+            android:onClick="@{()->shoeViewModel.addToCollection()}"
             android:paddingVertical="15dp"
             android:text="@string/save"
             android:textColor="@color/white"

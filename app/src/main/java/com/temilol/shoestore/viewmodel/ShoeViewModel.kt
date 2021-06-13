@@ -11,6 +11,17 @@ class ShoeViewModel : ViewModel() {
     private val _shoes by lazy { MutableLiveData(shoeLists) }
     val shoes: LiveData<MutableList<Shoe>> get() = _shoes
 
+    private val _addedSuccessfully by lazy { MutableLiveData(false) }
+    val addedSuccessfully: LiveData<Boolean> get() = _addedSuccessfully
+
+    private val _sizeHasError by lazy { MutableLiveData(false) }
+    val sizeHasError: LiveData<Boolean> get() = _sizeHasError
+
+    var name: String = ""
+    var size: String = ""
+    var company: String = ""
+    var description: String = ""
+
     init {
         loadShoes()
     }
@@ -32,9 +43,33 @@ class ShoeViewModel : ViewModel() {
         )
     }
 
-    fun addShoe(newShoe: Shoe) {
+    private fun addShoe(newShoe: Shoe) {
         val oldShoeCollection = _shoes.value ?: mutableListOf()
         oldShoeCollection.add(newShoe)
         _shoes.value = oldShoeCollection
+    }
+
+    fun addToCollection() {
+        if (size.isNotBlank()) {
+            val newShoe = Shoe(name, size.toDouble(), company, description)
+            addShoe(newShoe)
+            _addedSuccessfully.value = true
+            _sizeHasError.value = false
+        } else {
+            _addedSuccessfully.value = false
+            _sizeHasError.value = true
+        }
+    }
+
+    fun resetFields() {
+        name = ""
+        size = ""
+        company = ""
+        description = ""
+        _addedSuccessfully.value = false
+    }
+
+    fun resetErrorState() {
+        _sizeHasError.value = false
     }
 }
